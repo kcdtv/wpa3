@@ -4,27 +4,59 @@ Author: Mathy Vanhoef
 Original weblink: http://www.mathyvanhoef.com/
 Almost half a year ago, the Wi-Fi Alliance made a press release announcing they were working on WPA3. In a previous blog post, I discussed the four main features that were mentioned in this press release. Today, the WPA3 certification program is finally released publicly. Unfortunately, only one of the four initially announced features are a mandatory part of WPA3.
 
-The WPA3 Certification Program
+*The WPA3 Certification Program*
 
-First, it's important to know WPA3 is a so-called certification program. It's not a new standard or protocol. Instead, the Wi-Fi CERTIFIED WPA3 program specifies which existing standards (e.g. protocols) a product must support. If a product correctly implements these standards, it can use the "Wi-Fi CERTIFIED WPA3" label. In other words, this label indicates that the device passed a whole bunch of tests, meaning it will be interoperable with other devices that obtained the WPA3 certified label.
+First, it's important to know WPA3 is a so-called certification program. It's not a new standard or protocol.  
+Instead, the Wi-Fi CERTIFIED WPA3 program specifies which existing standards (e.g. protocols) a product must support.   
+If a product correctly implements these standards, it can use the "Wi-Fi CERTIFIED WPA3" label.   
+In other words, this label indicates that the device passed a whole bunch of tests, meaning it will be interoperable with other devices that obtained the WPA3 certified label.
 
-So what are the features that a WPA3 certified device must support? Initially, the press release at the beginning of this year suggested that WPA3 would require support of four major features. Summarized, these features consisted of a new handshake called dragonfly (which is resistant against dictionary attacks), an easy method to securely add new devices to a network, some basic protection when using open hotspots, and finally increased key sizes. Unfortunately, the WPA3 certification program only mandates support of the new dragonfly handshake. That's it. The other features are either optional, or a part of other certification programs. I fear that in practice this means manufacturers will just implement the new handshake, slap a "WPA3 certified" label on it, and be done with it.
+So what are the features that a WPA3 certified device must support?   
+Initially, the press release at the beginning of this year suggested that WPA3 would require support of four major features.  Summarized, these features consisted of a new handshake called dragonfly (which is resistant against dictionary attacks),  
+an easy method to securely add new devices to a network,  
+some basic protection when using open hotspots, and finally increased key sizes.  
+Unfortunately, the WPA3 certification program only mandates support of the new dragonfly handshake. That's it.     
+The other features are either optional, or a part of other certification programs.     
+I fear that in practice this means manufacturers will just implement the new handshake, slap a "WPA3 certified" label on it, and be done with it.
 
-But what happened exactly to the other three promised features? First, the technology to easily and securely add new devices to a network will be certified under the Wi-Fi CERTIFIED Easy Connect program. Second, improved security features for open hotspots (based on unauthenticated encryption) will be tested for interoperability under the Wi-Fi CERTIFIED Enhanced Open program. This means that if you buy a device that is WPA3 capable, there is no guarantee whatsoever that it supports these two features. Third, the increased key sizes are an optional part of the WPA3 certification. More precisely, only when using WPA3-Enterprise are the increased key sizes mandatory. Note that WPA3-Enterprise refers to enterprise authentication, where the login credentials are for example a username and password (instead of a simple pre-shared key in home networks). Finally, the key sizes that are used to encrypt traffic after connecting to a network aren't required to be increased at all.
+But what happened exactly to the other three promised features?   
+First, the technology to easily and securely add new devices to a network will be certified under the Wi-Fi CERTIFIED Easy Connect program.   
+Second, improved security features for open hotspots (based on unauthenticated encryption) will be tested for interoperability under the Wi-Fi CERTIFIED Enhanced Open program.     
+This means that if you buy a device that is WPA3 capable, there is no guarantee whatsoever that it supports these two features.   
+Third, the increased key sizes are an optional part of the WPA3 certification.   
+More precisely, only when using WPA3-Enterprise are the increased key sizes mandatory.  
+Note that WPA3-Enterprise refers to enterprise authentication, where the login credentials are for example a username and password (instead of a simple pre-shared key in home networks).  
+Finally, the key sizes that are used to encrypt traffic after connecting to a network aren't required to be increased at all.
 
-It's also worth mentioning that WPA3 will mandate support of Protected Management Frames (PMF). But that's not surprising: WPA2 also mandates support of PMF since the beginning of this year. Note that PMF prevents deauthentication attacks, and also offers other benefits. That said, I'm quite sure people will find new ways to bypass PMF and still forcibly disconnect clients from a network.
+It's also worth mentioning that WPA3 will mandate support of Protected Management Frames (PMF).  
+But that's not surprising: WPA2 also mandates support of PMF since the beginning of this year.  
+Note that PMF prevents deauthentication attacks, and also offers other benefits.  
+That said, I'm quite sure people will find new ways to bypass PMF and still forcibly disconnect clients from a network.
 
 To summarize, here's an overview of new features that are and aren't part of WPA3:
 
-    The dragonfly handshake (also called Simultaneous Authentication of Equals) is a mandatory part of WPA3. So if in the future you select "WPA3-Personal" in your home router, you will be using this handshake. This means dictionary attacks against the handshake will be longer be possible.
-    The replacement of Wi-Fi Protected Setup (WPS) will be called Wi-Fi Easy Connect. It is based on the Device Provisioning Protocol (DPP). It is not part of WPA3.
-    To provide unauthenticated encryption when connecting to an open hotspot, the Wi-Fi Alliance introduced Wi-Fi Enhanced Open. The standard behind this marketing term is Opportunistic Wireless Encryption. It is not part of WPA3. Note that even if opportunistic encryption is being used, it is trivial for an attacker to set up a rogue AP and intercept all traffic.
-    WPA3-Enterprise networks will support key sizes that offer the equivalent of 192-bit security. But the increased key sizes are only required during the authentication stage. Moreover, the WPA3-Enterprise mode is an optional part of WPA3.
+    The dragonfly handshake (also called Simultaneous Authentication of Equals) is a mandatory part of WPA3.  
+    So if in the future you select "WPA3-Personal" in your home router, you will be using this handshake.   
+    This means dictionary attacks against the handshake will be longer be possible.  
+        The replacement of Wi-Fi Protected Setup (WPS) will be called Wi-Fi Easy Connect. It is based on the Device Provisioning Protocol (DPP).     
+     It is not part of WPA3.  
+    To provide unauthenticated encryption when connecting to an open hotspot, the Wi-Fi Alliance introduced Wi-Fi Enhanced Open.  
+    The standard behind this marketing term is Opportunistic Wireless Encryption.  
+    It is not part of WPA3. Note that even if opportunistic encryption is being used, it is trivial for an attacker to set up a rogue AP and intercept all traffic.  
+    WPA3-Enterprise networks will support key sizes that offer the equivalent of 192-bit security. But the increased key sizes are only required during the authentication stage.      
+  Moreover, the WPA3-Enterprise mode is an optional part of WPA3.
 
-All combined, this means that the only required part of WPA3 is the new dragonfly handshake. While this handshake is an improvement over the old 4-way handshake of WPA2, the Wi-Fi Alliance could have improved security a lot more, by also making the other features a mandatory part of WPA3. It seems the Wi-Fi Alliance focused on keeping WPA3 easy to implement for vendors, but not on improving the security of users.
+All combined, this means that the only required part of WPA3 is the new dragonfly handshake.  
+While this handshake is an improvement over the old 4-way handshake of WPA2, the Wi-Fi Alliance could have improved security a lot more, by also making the other features a mandatory part of WPA3.    
+It seems the Wi-Fi Alliance focused on keeping WPA3 easy to implement for vendors, but not on improving the security of users.
 
 Conclusion
 
-The Wi-Fi Alliance missed an opportunity to truly improve the security of Wi-Fi networks. Instead, due to the vague press release earlier this year, and the closed discussions afterwards, most users were left confused and unsure about what will and won't be part of WPA3. In particular, even though the press release promised several good enhancements, only one of them is mandatory under WPA3. Indeed, only the dragonfly handshake is mandatory. While this handshake is an improvement over the old 4-way handshake of WPA2, they could have done a lot more. As a result, the WPA3 certification program is a missed opportunity that could have truly improved Wi-Fi security.
+The Wi-Fi Alliance missed an opportunity to truly improve the security of Wi-Fi networks.  
+Instead, due to the vague press release earlier this year, and the closed discussions afterwards, most users were left confused and unsure about what will and won't be part of WPA3.  
+In particular, even though the press release promised several good enhancements, only one of them is mandatory under WPA3.  
+Indeed, only the dragonfly handshake is mandatory.  
+While this handshake is an improvement over the old 4-way handshake of WPA2, they could have done a lot more.  
+As a result, the WPA3 certification program is a missed opportunity that could have truly improved Wi-Fi security.
 
 Minor update: it is worth noting that vendors may step up and still implement all the other security features. In particular, I hope most vendors will nevertheless implement Wi-Fi Enhanced Open and/or Wi-Fi Easy Connect.
